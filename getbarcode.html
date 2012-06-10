@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja"> 
+<head>
+<meta charset="Shift-JIS" />
+<title>pic2shopを使用したバーコード読み取りhtml</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" />
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.js"></script>
+ <SCRIPT LANGUAGE="JavaScript">
+     function clickB() {
+      setTimeout(function() {
+      // if pic2shop not installed yet, go to App Store
+      window.location = "http://itunes.com/apps/pic2shop";
+     }, 25);
+     // launch pic2shop and tell it to open Google Products with scan result
+     window.location="pic2shop://scan?callback=getbarcode.html?%3DEAN";
+
+     }
+
+	$(document).ready(function(){
+		document.getElementById("result").value = location.search.substring(3);
+	});     
+ </SCRIPT>
+</head>
+<body>
+
+<!--///////トップページ///////-->
+<div data-role="page" id="top">
+
+<div data-role="header" class="toppage">
+<h1>サイトタイトル</h1>
+</div>
+
+<div data-role="content">
+         <FORM>
+         	<input type="text" id="result">
+            <INPUT TYPE=BUTTON OnClick="clickB();" VALUE="Scan Barcode">
+         </FORM>	
+</div>
+</div>
