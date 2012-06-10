@@ -7,35 +7,34 @@
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" />
 <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.js"></script>
- <SCRIPT LANGUAGE="JavaScript">
-     function clickB() {
-      setTimeout(function() {
-      // if pic2shop not installed yet, go to App Store
-      window.location = "http://itunes.com/apps/pic2shop";
-     }, 25);
-     // launch pic2shop and tell it to open Google Products with scan result
-     window.location="pic2shop://scan?callback=https://github.com/Usek2g/getJanCode/blob/master/getbarcode.html?%3DEAN";
-
-     }
+<script LANGUAGE="JavaScript">
+	function clickB() {
+	 setTimeout(function() {
+	 // if pic2shop not installed yet, go to App Store
+	 window.location = "http://itunes.com/apps/pic2shop";
+	}, 25);
+		// launch pic2shop and tell it to open Google Products with scan result
+		window.location="pic2shop://scan?callback=https://github.com/Usek2g/getJanCode/blob/master/getbarcode.html?%3DEAN";
+	}
 
 	$(document).ready(function(){
 		document.getElementById("result").value = location.search.substring(3);
-	});     
- </SCRIPT>
+	});	
+</script>
 </head>
 <body>
 
 <!--///////トップページ///////-->
 <div data-role="page" id="top">
 
-<div data-role="header" class="toppage">
-<h1>サイトタイトル</h1>
-</div>
+	<div data-role="header" class="toppage">
+		<h1>pic2shopを使用したバーコード読み取りhtml</h1>
+	</div>
 
-<div data-role="content">
-         <FORM>
-         	<input type="text" id="result">
-            <INPUT TYPE=BUTTON OnClick="clickB();" VALUE="Scan Barcode">
-         </FORM>	
-</div>
+	<div data-role="content">
+		<FORM>
+			<input type="text" id="result">
+			<input type=button OnClick="clickB();" value="Scan Barcode">
+		</FORM>	
+	</div>
 </div>
